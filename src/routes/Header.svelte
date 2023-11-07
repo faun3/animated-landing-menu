@@ -7,14 +7,14 @@
       buttonState = "open";
       gsap.to(".slider ", {
         duration: 0.5,
-        top: "0%",
+        top: "-100%",
         ease: "power4.out",
       });
     } else {
       buttonState = "closed";
       gsap.to(".slider ", {
         duration: 0.5,
-        top: "100%",
+        top: "0%",
         ease: "power4.out",
       });
     }
@@ -48,37 +48,32 @@
     min-height: 2rem;
     background-color: rgb(107, 103, 103);
     color: white;
+    width: 100%;
   }
 
   .expanding-menu {
     border: none;
-    color: black;
-    border-radius: 999px;
-    text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    position: relative;
-    width: fit-content;
     height: 3rem;
+    width: 5rem;
+    overflow: hidden;
+    border-radius: 2rem;
+    position: relative;
+    cursor: pointer;
+    padding: 0;
 
     .slider {
-      position: absolute;
-      padding: 0.5em 1.5em;
-      display: flex;
-      flex-direction: column;
-      top: 0;
-      left: 0;
+      position: relative;
+      width: 100%;
+      height: 100%;
 
       div {
         width: 100%;
         height: 100%;
-        padding: 0.5em 1.5em;
         background-color: rgb(211, 244, 26);
+        display: flex;
         align-items: center;
         justify-content: center;
+        text-transform: uppercase;
       }
 
       div:nth-of-type(2) {
