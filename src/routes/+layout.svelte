@@ -1,10 +1,11 @@
 <script>
   import "../global.css";
+  import Header from "./Header.svelte";
 </script>
 
-<header>
-  <p>This is my header</p>
-</header>
 <div>
-  <slot />
+  <Header />
+  <main>
+    <slot />
+  </main>
 </div>

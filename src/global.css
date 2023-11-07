@@ -5,6 +5,7 @@
  * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
  */
 /*! modern-normalize v2.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 *,
 ::after,
 ::before {
@@ -18,7 +19,14 @@ html {
   -moz-tab-size: 4;
   tab-size: 4;
 }
-body {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
 }
 hr {
