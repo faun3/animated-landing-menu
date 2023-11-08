@@ -37,27 +37,46 @@
 
 <nav class="navbar">
   <span class="">faun</span>
-  <div class="menu-wrapper">
-    <div class={`menu-box ${buttonState}`} />
-    <button
-      class={`expanding-menu ${buttonState}`}
-      on:click={transition}
-    >
-      <div class="slider">
-        <div class="element">
-          <div class="perspectiveText">
-            <p>menu</p>
-            <p>menu</p>
-          </div>
-        </div>
-        <div class="element">
-          <div class="perspectiveText">
-            <p>close</p>
-            <p>close</p>
+  <div class="relative-wrapper">
+    <div class="menu-wrapper">
+      <div class={`menu-box ${buttonState}`}>
+        <div class="menu-content">
+          <div class="content-ctas">
+            <p>Projects</p>
+            <p>Agence</p>
+            <div class="links">
+              <div class="links-left">
+                <p>Facebook</p>
+                <p>Instagram</p>
+              </div>
+              <div class="links-right">
+                <p>LinkedIn</p>
+                <p>English</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </button>
+      <button
+        class={`expanding-menu ${buttonState}`}
+        on:click={transition}
+      >
+        <div class="slider">
+          <div class="element">
+            <div class="perspectiveText">
+              <p>menu</p>
+              <p>menu</p>
+            </div>
+          </div>
+          <div class="element">
+            <div class="perspectiveText">
+              <p>close</p>
+              <p>close</p>
+            </div>
+          </div>
+        </div>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -68,10 +87,18 @@
     justify-content: space-between;
     padding: 2rem 2rem;
     align-items: center;
-    min-height: 2rem;
+    height: 7rem;
     background-color: rgb(107, 103, 103);
     color: white;
     width: 100%;
+    position: fixed;
+    top: 0;
+  }
+
+  .relative-wrapper {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
   }
 
   .menu-wrapper {
@@ -83,6 +110,7 @@
     width: 5rem;
     background-color: rgb(211, 244, 26);
     border-radius: 2rem;
+    position: relative;
   }
 
   .expanding-menu {
