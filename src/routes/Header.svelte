@@ -1,48 +1,51 @@
 <script lang="ts">
   import gsap from "gsap";
-  import { tick } from "svelte";
 
   let buttonState = "closed";
   function transition() {
     if (buttonState === "closed") {
       buttonState = "open";
       // animate the menu OPENING
-      gsap.to(".slider ", {
-        duration: 0.5,
+      const tl = gsap.timeline();
+      tl.to(".slider ", {
+        duration: 0.4,
         top: "-100%",
         ease: "power4.out",
       });
-      gsap.to(".menu-box", {
-        duration: 0.5,
-        width: "40rem",
-        height: "30rem",
-        translateX: "1rem",
-        translateY: "-1rem",
-      });
-      gsap.to(".menu-content", {
+      tl.to(
+        ".menu-box",
+        {
+          duration: 0.5,
+          width: "40rem",
+          height: "30rem",
+          translateX: "1rem",
+          translateY: "-1rem",
+        },
+        ">-0.4"
+      );
+      tl.to(".menu-content", {
         opacity: 1,
         duration: 0.3,
       });
-    } else {
-      buttonState = "closed";
-      // animate the menu CLOSING
+
       // gsap.to(".slider ", {
       //   duration: 0.5,
-      //   top: "0%",
+      //   top: "-100%",
       //   ease: "power4.out",
       // });
       // gsap.to(".menu-box", {
       //   duration: 0.5,
-      //   width: "5rem",
-      //   height: "3rem",
-      //   translateX: "0rem",
-      //   translateY: "0rem",
+      //   width: "40rem",
+      //   height: "30rem",
+      //   translateX: "1rem",
+      //   translateY: "-1rem",
       // });
-
       // gsap.to(".menu-content", {
-      //   opacity: 0,
+      //   opacity: 1,
       //   duration: 0.3,
       // });
+    } else {
+      buttonState = "closed";
       const tl = gsap.timeline();
       tl.to(".slider ", {
         duration: 0.4,
@@ -80,7 +83,11 @@
         <div class="menu-content">
           <div class="content-ctas">
             <p>Projects</p>
-            <p>Agence</p>
+            <p>Agency</p>
+            <p>Expertise</p>
+            <p>Careers</p>
+            <p>Day in the Life</p>
+            <p>Contact</p>
             <div class="links">
               <div class="links-left">
                 <p>Facebook</p>
@@ -154,6 +161,21 @@
       position: absolute;
       color: black;
       bottom: 0;
+      font-size: 2rem;
+      display: flex;
+      flex-direction: column;
+      padding: 0 0 1rem 2rem;
+
+      .content-ctas p {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .links {
+      display: flex;
+      font-size: 1.2rem;
+      gap: 1rem;
+      margin-top: 1rem;
     }
   }
 

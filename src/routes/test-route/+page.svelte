@@ -15,13 +15,4 @@
   h1 {
     color: white;
   }
-
-  .fakeButton {
-    border-radius: 2rem;
-    margin: 2rem;
-    width: 5rem;
-    height: 2rem;
-    background-color: greenyellow;
-    color: black;
-  }
 </style>
