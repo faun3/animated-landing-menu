@@ -1,5 +1,7 @@
 <script lang="ts">
   import gsap from "gsap";
+  import PerspectiveText from "./PerspectiveText.svelte";
+
   let buttonState = "closed";
   import { onMount } from "svelte";
   function transition() {
@@ -28,11 +30,17 @@
     on:click={transition}
   >
     <div class="slider">
-      <div>
-        <p>menu</p>
+      <div class="element">
+        <div class="perspectiveText">
+          <p>menu</p>
+          <p>menu</p>
+        </div>
       </div>
-      <div>
-        <p>close</p>
+      <div class="element">
+        <div class="perspectiveText">
+          <p>close</p>
+          <p>close</p>
+        </div>
       </div>
     </div>
   </button>
@@ -66,21 +74,47 @@
       width: 100%;
       height: 100%;
 
-      div {
+      .element {
         width: 100%;
         height: 100%;
         background-color: rgb(211, 244, 26);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-transform: uppercase;
+        &:hover {
+          .perspectiveText {
+            transform: rotateX(90deg);
+            p {
+              &:nth-of-type(1) {
+                transform: rotateX(-90deg);
+              }
+            }
+          }
+        }
       }
 
-      div:nth-of-type(2) {
+      .element:nth-of-type(2) {
         background-color: black;
         color: rgb(211, 244, 26);
         position: absolute;
         top: 100%;
+      }
+    }
+    .perspectiveText {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      overflow: hidden;
+      transition: transform 0.75s cubic-bezier(0.76, 0, 0.24, 1);
+      transform-style: preserve-3d;
+
+      p {
+        transform-origin: top;
+        &:nth-of-type(2) {
+          position: absolute;
+          transform: rotateX(-90deg);
+          transform-origin: bottom;
+        }
       }
     }
   }
