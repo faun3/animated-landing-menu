@@ -1,10 +1,12 @@
 <script lang="ts">
   import gsap from "gsap";
+  import { tick } from "svelte";
 
   let buttonState = "closed";
   function transition() {
     if (buttonState === "closed") {
       buttonState = "open";
+      // animate the menu OPENING
       gsap.to(".slider ", {
         duration: 0.5,
         top: "-100%",
@@ -17,20 +19,55 @@
         translateX: "1rem",
         translateY: "-1rem",
       });
+      gsap.to(".menu-content", {
+        opacity: 1,
+        duration: 0.3,
+      });
     } else {
       buttonState = "closed";
-      gsap.to(".slider ", {
-        duration: 0.5,
+      // animate the menu CLOSING
+      // gsap.to(".slider ", {
+      //   duration: 0.5,
+      //   top: "0%",
+      //   ease: "power4.out",
+      // });
+      // gsap.to(".menu-box", {
+      //   duration: 0.5,
+      //   width: "5rem",
+      //   height: "3rem",
+      //   translateX: "0rem",
+      //   translateY: "0rem",
+      // });
+
+      // gsap.to(".menu-content", {
+      //   opacity: 0,
+      //   duration: 0.3,
+      // });
+      const tl = gsap.timeline();
+      tl.to(".slider ", {
+        duration: 0.4,
         top: "0%",
         ease: "power4.out",
       });
-      gsap.to(".menu-box", {
-        duration: 0.5,
-        width: "5rem",
-        height: "3rem",
-        translateX: "0rem",
-        translateY: "0rem",
-      });
+      tl.to(
+        ".menu-content",
+        {
+          opacity: 0,
+          duration: 0.3,
+        },
+        ">-0.2"
+      );
+      tl.to(
+        ".menu-box",
+        {
+          duration: 0.5,
+          width: "5rem",
+          height: "3rem",
+          translateX: "0rem",
+          translateY: "0rem",
+        },
+        ">-0.1"
+      );
     }
   }
 </script>
@@ -111,6 +148,13 @@
     background-color: rgb(211, 244, 26);
     border-radius: 2rem;
     position: relative;
+    overflow: hidden;
+
+    .menu-content {
+      position: absolute;
+      color: black;
+      bottom: 0;
+    }
   }
 
   .expanding-menu {

@@ -1,12 +1,8 @@
 <script lang="ts">
-  import PerspectiveText2 from "../PerspectiveText2.svelte";
 </script>
 
 <div class="screen">
   <h1>page content goes here</h1>
-  <div class="fakeButton">
-    <PerspectiveText2 text="menu" />
-  </div>
 </div>
 
 <style lang="scss">
