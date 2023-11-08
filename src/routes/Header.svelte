@@ -82,12 +82,99 @@
       <div class={`menu-box ${buttonState}`}>
         <div class="menu-content">
           <div class="content-ctas">
-            <p>Projects</p>
-            <p>Agency</p>
-            <p>Expertise</p>
-            <p>Careers</p>
-            <p>Day in the Life</p>
-            <p>Contact</p>
+            <span class="cta-with-arrow">
+              <figure>
+                <svg
+                  width="105"
+                  height="62"
+                  viewBox="0 0 105 62"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 31H103M103 31L73.5 1.5M103 31L73.5 60.5"
+                    stroke="#010202"
+                    stroke-width="2"
+                    vector-effect="non-scaling-stroke"
+                  />
+                </svg>
+              </figure>
+              <p>Projects</p>
+            </span>
+            <span class="cta-with-arrow">
+              <figure>
+                <svg
+                  width="105"
+                  height="62"
+                  viewBox="0 0 105 62"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 31H103M103 31L73.5 1.5M103 31L73.5 60.5"
+                    stroke="#010202"
+                    stroke-width="2"
+                    vector-effect="non-scaling-stroke"
+                  />
+                </svg>
+              </figure>
+              <p>Agency</p>
+            </span>
+            <span class="cta-with-arrow">
+              <figure>
+                <svg
+                  width="105"
+                  height="62"
+                  viewBox="0 0 105 62"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 31H103M103 31L73.5 1.5M103 31L73.5 60.5"
+                    stroke="#010202"
+                    stroke-width="2"
+                    vector-effect="non-scaling-stroke"
+                  />
+                </svg>
+              </figure>
+              <p>Expertise</p>
+            </span><span class="cta-with-arrow">
+              <figure>
+                <svg
+                  width="105"
+                  height="62"
+                  viewBox="0 0 105 62"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 31H103M103 31L73.5 1.5M103 31L73.5 60.5"
+                    stroke="#010202"
+                    stroke-width="2"
+                    vector-effect="non-scaling-stroke"
+                  />
+                </svg>
+              </figure>
+              <p>Careers</p>
+            </span><span class="cta-with-arrow">
+              <figure>
+                <svg
+                  width="105"
+                  height="62"
+                  viewBox="0 0 105 62"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 31H103M103 31L73.5 1.5M103 31L73.5 60.5"
+                    stroke="#010202"
+                    stroke-width="2"
+                    vector-effect="non-scaling-stroke"
+                  />
+                </svg>
+              </figure>
+              <p>Contact</p>
+            </span>
             <div class="links">
               <div class="links-left">
                 <p>Facebook</p>
@@ -166,8 +253,43 @@
       flex-direction: column;
       padding: 0 0 1rem 2rem;
 
-      .content-ctas p {
-        margin-bottom: 0.5rem;
+      .content-ctas {
+        p {
+          margin-bottom: 0.5rem;
+        }
+
+        .cta-with-arrow {
+          overflow: hidden;
+
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          p {
+            transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+            transform: translateX(-2.5rem);
+            margin: 0;
+          }
+          figure {
+            display: inline;
+            transform: translateX(-2.5rem);
+            transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+            margin: 0;
+            svg {
+              width: 2rem;
+            }
+          }
+
+          &:hover {
+            figure {
+              transform: translateX(0rem);
+              transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+            p {
+              transform: translateX(0rem);
+              transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+          }
+        }
       }
     }
 
