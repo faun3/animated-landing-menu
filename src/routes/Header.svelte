@@ -1,9 +1,7 @@
 <script lang="ts">
   import gsap from "gsap";
-  import PerspectiveText from "./PerspectiveText.svelte";
 
   let buttonState = "closed";
-  import { onMount } from "svelte";
   function transition() {
     if (buttonState === "closed") {
       buttonState = "open";
@@ -12,6 +10,13 @@
         top: "-100%",
         ease: "power4.out",
       });
+      gsap.to(".menu-box", {
+        duration: 0.5,
+        width: "40rem",
+        height: "30rem",
+        translateX: "1rem",
+        translateY: "-1rem",
+      });
     } else {
       buttonState = "closed";
       gsap.to(".slider ", {
@@ -19,31 +24,41 @@
         top: "0%",
         ease: "power4.out",
       });
+      gsap.to(".menu-box", {
+        duration: 0.5,
+        width: "5rem",
+        height: "3rem",
+        translateX: "0rem",
+        translateY: "0rem",
+      });
     }
   }
 </script>
 
 <nav class="navbar">
   <span class="">faun</span>
-  <button
-    class={`expanding-menu ${buttonState}`}
-    on:click={transition}
-  >
-    <div class="slider">
-      <div class="element">
-        <div class="perspectiveText">
-          <p>menu</p>
-          <p>menu</p>
+  <div class="menu-wrapper">
+    <div class={`menu-box ${buttonState}`} />
+    <button
+      class={`expanding-menu ${buttonState}`}
+      on:click={transition}
+    >
+      <div class="slider">
+        <div class="element">
+          <div class="perspectiveText">
+            <p>menu</p>
+            <p>menu</p>
+          </div>
+        </div>
+        <div class="element">
+          <div class="perspectiveText">
+            <p>close</p>
+            <p>close</p>
+          </div>
         </div>
       </div>
-      <div class="element">
-        <div class="perspectiveText">
-          <p>close</p>
-          <p>close</p>
-        </div>
-      </div>
-    </div>
-  </button>
+    </button>
+  </div>
 </nav>
 
 <style lang="scss">
@@ -51,12 +66,23 @@
     font-family: "Space Grotesk", sans-serif;
     display: flex;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 2rem 2rem;
     align-items: center;
     min-height: 2rem;
     background-color: rgb(107, 103, 103);
     color: white;
     width: 100%;
+  }
+
+  .menu-wrapper {
+    position: relative;
+  }
+
+  .menu-box {
+    height: 3rem;
+    width: 5rem;
+    background-color: rgb(211, 244, 26);
+    border-radius: 2rem;
   }
 
   .expanding-menu {
@@ -67,6 +93,9 @@
     border-radius: 2rem;
     cursor: pointer;
     padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
 
     .slider {
       position: relative;
