@@ -161,7 +161,7 @@
       position: absolute;
       color: black;
       bottom: 0;
-      font-size: 2rem;
+      font-size: 2.5rem;
       display: flex;
       flex-direction: column;
       padding: 0 0 1rem 2rem;
@@ -176,6 +176,29 @@
       font-size: 1.2rem;
       gap: 1rem;
       margin-top: 1rem;
+      width: fit-content;
+
+      .links-left,
+      .links-right {
+        width: fit-content;
+        p {
+          position: relative;
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            transition: transform 0.3s cubic-bezier(0.58, 0, 0.85, 0.75);
+            transform: scale(0);
+            transform-origin: top left;
+          }
+          &:hover::after {
+            transform: scale(1);
+          }
+        }
+      }
     }
   }
 
