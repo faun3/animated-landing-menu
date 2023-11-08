@@ -78,10 +78,6 @@
         height: 100%;
         background-color: rgb(211, 244, 26);
 
-        p {
-          margin: 0;
-        }
-
         &:nth-of-type(2) {
           background-color: black;
           p {
@@ -90,14 +86,17 @@
         }
         &:hover {
           .perspectiveText {
-            transform: rotateX(90deg);
             p {
-              &:nth-of-type(1) {
-                transform: translateY(-100%);
-                opacity: 0;
-              }
+              transition: all 0.75s cubic-bezier(0.075, 0.82, 0.165, 1);
+              transform-style: preserve-3d;
               &:nth-of-type(2) {
+                transform: rotateX(0deg) translateY(calc(-100% - 0.9rem));
+                transform-origin: top center;
                 opacity: 1;
+              }
+              &:nth-of-type(1) {
+                transform: rotateX(90deg);
+                opacity: 0;
               }
             }
           }
@@ -112,18 +111,22 @@
       justify-content: center;
       text-transform: uppercase;
       overflow: hidden;
-      transition: transform 0.75s cubic-bezier(0.76, 0, 0.24, 1);
+      position: relative;
       transform-style: preserve-3d;
 
       p {
-        transition: all 0.75s cubic-bezier(0.76, 0, 0.24, 1);
-        pointer-events: none;
-        text-transform: uppercase;
+        transition: all 1.95s cubic-bezier(0.075, 0.82, 0.165, 1);
         &:nth-of-type(2) {
           position: absolute;
+          top: 100%;
           transform: rotateX(-90deg);
-          transform-origin: bottom center;
+          transform-origin: top center;
+          pointer-events: none;
           opacity: 0;
+        }
+        &:nth-of-type(1) {
+          transform-origin: top center;
+          pointer-events: none;
         }
       }
     }
