@@ -1,4 +1,15 @@
 <script lang="ts">
+  // gsap.to(".footer-underneath", {
+  // scrollTrigger: {
+  //   trigger: ".newsletter-section",
+  //   start: "top top",
+  //   end: "bottom top",
+  //   scrub: true,
+  //   pin: ".footer-underneath",
+  //   pinSpacing: false,
+  //   markers: true,
+  // },
+  // });
 </script>
 
 <div class="component">
@@ -57,6 +68,7 @@
 <style lang="scss">
   .component {
     width: 100%;
+    position: relative;
   }
   .newsletter-section {
     background-color: #d0ff71;
@@ -152,10 +164,14 @@
 
   .footer-underneath {
     background-color: #000;
+    width: 100%;
     color: #fff;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
+    position: absolute;
+    bottom: 0px;
+    z-index: -1;
 
     .footer-info {
       padding-left: calc(100vw / 48);

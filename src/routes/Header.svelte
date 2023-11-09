@@ -243,6 +243,7 @@
     border-radius: 2rem;
     position: relative;
     overflow: hidden;
+    z-index: 2;
 
     .menu-content {
       position: absolute;
@@ -252,6 +253,7 @@
       display: flex;
       flex-direction: column;
       padding: 0 0 1rem 2rem;
+      z-index: 3;
 
       .content-ctas {
         p {
@@ -336,6 +338,7 @@
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 12;
 
     .slider {
       position: relative;
