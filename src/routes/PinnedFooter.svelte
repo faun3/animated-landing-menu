@@ -159,6 +159,14 @@
 
     .footer-info {
       padding-left: calc(100vw / 48);
+      p {
+        margin-bottom: 1rem;
+      }
+      a {
+        color: white;
+        text-decoration: underline;
+        cursor: pointer;
+      }
     }
 
     .big-word {

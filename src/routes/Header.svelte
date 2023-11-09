@@ -219,8 +219,8 @@
     padding: 2rem 2rem;
     align-items: center;
     height: 7rem;
-    background-color: rgb(0, 0, 0);
-    color: white;
+    background-color: transparent;
+    color: black;
     width: 100%;
     position: fixed;
     top: 0;
