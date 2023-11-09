@@ -7,9 +7,9 @@
 
 <style lang="scss">
   .screen {
-    background-color: rgb(51, 48, 48);
+    background-color: rgb(255, 255, 255);
     width: 100vw;
-    min-height: 100vh;
+    height: 150vh;
   }
 
   h1 {

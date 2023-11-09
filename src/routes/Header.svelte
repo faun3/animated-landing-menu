@@ -213,13 +213,13 @@
 
 <style lang="scss">
   .navbar {
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Nunito Sans", sans-serif;
     display: flex;
     justify-content: space-between;
     padding: 2rem 2rem;
     align-items: center;
     height: 7rem;
-    background-color: rgb(107, 103, 103);
+    background-color: rgb(0, 0, 0);
     color: white;
     width: 100%;
     position: fixed;
@@ -239,7 +239,7 @@
   .menu-box {
     height: 3rem;
     width: 5rem;
-    background-color: rgb(211, 244, 26);
+    background-color: #d0ff71;
     border-radius: 2rem;
     position: relative;
     overflow: hidden;
@@ -256,6 +256,7 @@
       .content-ctas {
         p {
           margin-bottom: 0.5rem;
+          font-weight: 500;
         }
 
         .cta-with-arrow {
@@ -344,12 +345,12 @@
       .element {
         width: 100%;
         height: 100%;
-        background-color: rgb(211, 244, 26);
+        background-color: #d0ff71;
 
         &:nth-of-type(2) {
           background-color: black;
           p {
-            color: rgb(211, 244, 26);
+            color: #d0ff71;
           }
         }
         &:hover {
