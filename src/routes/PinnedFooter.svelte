@@ -153,16 +153,19 @@
   .footer-underneath {
     background-color: #000;
     color: #fff;
-    padding: 2rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
 
     .footer-info {
+      padding-left: calc(100vw / 48);
     }
 
     .big-word {
       display: flex;
       gap: 0.125rem;
       margin-bottom: 5rem;
-      justify-content: center;
+      justify-content: space-between;
 
       span {
         font-size: calc(100vw / 4);
