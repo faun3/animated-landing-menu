@@ -1,14 +1,19 @@
 <script lang="ts">
-  // gsap.to(".footer-underneath", {
-  // scrollTrigger: {
-  //   trigger: ".newsletter-section",
-  //   start: "top top",
-  //   end: "bottom top",
-  //   scrub: true,
-  //   pin: ".footer-underneath",
-  //   pinSpacing: false,
-  //   markers: true,
-  // },
+  // import { onMount } from "svelte";
+  // import gsap from "gsap";
+  // import { ScrollTrigger } from "gsap/ScrollTrigger";
+  // gsap.registerPlugin(ScrollTrigger);
+  // onMount(() => {
+  //   gsap.to(".footer-underneath", {
+  //     scrollTrigger: {
+  //       trigger: ".newsletter-section",
+  //       start: "bottom bottom",
+  //       end: "top 25%",
+  //       scrub: true,
+  //       markers: true,
+  //     },
+  //     bottom: -1000,
+  //   });
   // });
 </script>
 
@@ -72,7 +77,7 @@
   }
   .newsletter-section {
     background-color: #d0ff71;
-    padding: 20rem 2rem 10rem 2rem;
+    padding: 10rem 2rem 5rem 2rem;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -170,7 +175,7 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    bottom: 0px;
+    bottom: -100px;
     z-index: -1;
 
     .footer-info {
