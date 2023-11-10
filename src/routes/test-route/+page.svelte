@@ -1,6 +1,3 @@
-<script lang="ts">
-</script>
-
 <div class="screen">
   <h1>page content goes here</h1>
 </div>

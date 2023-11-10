@@ -1,20 +1,17 @@
 <script lang="ts">
-  // import { onMount } from "svelte";
-  // import gsap from "gsap";
-  // import { ScrollTrigger } from "gsap/ScrollTrigger";
-  // gsap.registerPlugin(ScrollTrigger);
-  // onMount(() => {
-  //   gsap.to(".footer-underneath", {
-  //     scrollTrigger: {
-  //       trigger: ".newsletter-section",
-  //       start: "bottom bottom",
-  //       end: "top 25%",
-  //       scrub: true,
-  //       markers: true,
-  //     },
-  //     bottom: -1000,
-  //   });
-  // });
+    import { gsap }  from 'gsap/dist/gsap';
+    import {ScrollTrigger} from 'gsap/dist/ScrollTrigger';
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to(".footer-underneath", {
+      scrollTrigger: {
+        trigger: ".newsletter-section",
+        start: "bottom bottom",
+        end: "top 25%",
+        scrub: true,
+        markers: true,
+      },
+      bottom: -1000,
+    });
 </script>
 
 <div class="component">

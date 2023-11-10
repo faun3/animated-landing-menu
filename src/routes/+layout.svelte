@@ -1,7 +1,8 @@
 <script>
   import "../global.css";
   import Header from "./Header.svelte";
-  import PinnedFooter from "./PinnedFooter.svelte";
+  import Footer from "./Footer.svelte";
+  export const ssr = false;
 </script>
 
 <div class="my-website-lol">
@@ -9,7 +10,7 @@
   <main>
     <slot />
   </main>
-  <PinnedFooter />
+  <Footer/>
 </div>
 
 <style lang="scss">
