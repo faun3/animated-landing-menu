@@ -5,12 +5,12 @@
     gsap.to(".footer-underneath", {
       scrollTrigger: {
         trigger: ".newsletter-section",
-        start: "bottom bottom",
+        start: "top top",
         end: "top 25%",
         scrub: true,
-        markers: true,
       },
       bottom: -1000,
+      duration: 0.5,
     });
 </script>
 
